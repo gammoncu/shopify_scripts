@@ -1,0 +1,1 @@
+Tile color and theme color is chosen from the settings so no need to look for their color codes

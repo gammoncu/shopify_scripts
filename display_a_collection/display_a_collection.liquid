@@ -1,0 +1,31 @@
+<!--
+if you have a collection named --mycollection-- you can display it 
+on a sliding banner by pasting
+this script to another snippet or section
+-->
+{% if collections.--mycollection-- and collections.--mycollection--.products_count > 1 %}
+<div class="related-products-container">
+  <div class="dt-sc-hr-invisible-large"></div>
+      <div class="section-header section-header--small">
+        <div class="border-title">
+          
+          <h2 class="section-header__title">    
+            <!-- name of --mycollection-- as header -->
+          </h2>
+            
+        </div>
+      </div>
+  <div class="related_products_container">
+  <ul class="grid-uniform grid-link__container related-products owl-carousel owl-theme">
+ 
+    {% for product in collections.deals.products %}
+    
+          {% assign grid_item_width = 'wide--one-quarter post-large--one-quarter large--one-quarter medium--one-quarter small--one-half' %}
+          {% include 'home-product-grid-item' %}
+        
+    {% endfor %}
+  </ul>
+<div class="nav_featured"></div>
+  </div>
+</div>
+{% endif %}

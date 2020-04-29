@@ -1,0 +1,96 @@
+<!--
+Change the commented areas with your menu names from your navigation
+(admin > online store > navigation)
+You can add or delete divisions to adjust columns be careful about div 
+class, for example for two rows it shout be class="grid__item one-half"
+-->
+
+<div class="grid">
+  <div class="grid__item one-third"> <h4><strong><!--Your menu name as header--></strong></h4>
+      <ul class="parent">
+      {% for link in linklists.<!--Your menu name-->.links %}
+      <li><a href="{{ link.url }}">{{ link.title }}</a>
+      {% if link.links != blank %}
+        <ul class="child">
+          {% for child_link in link.links %}  
+          <li><a href= "{{ child_link.url }}">{{ child_link.title }}</a>
+          {% if child_link.links != blank %}
+            <ul class="grandchild">
+            {% for grandchild_link in child_link.links %}  
+              <li><a href= "{{ grandchild_link.url }}">{{ grandchild_link.title }}</a></li>
+            {% endfor %}
+            </ul>
+          {% endif %}   
+          </li>
+          {% endfor %}
+        </ul> 
+      {% endif %} 
+      </li>
+      {% endfor %}
+      </ul>
+  </div>
+  
+  <div class="grid__item one-third"><h4><strong><!--Your menu name as header--></strong></h4>
+  	<ul class="parent">
+      {% for link in linklists.<!--Your menu name-->.links %}
+      <li><a href="{{ link.url }}">{{ link.title }}</a>
+      {% if link.links != blank %}
+        <ul class="child">
+          {% for child_link in link.links %}  
+          <li><a href= "{{ child_link.url }}">{{ child_link.title }}</a>
+          {% if child_link.links != blank %}
+            <ul class="grandchild">
+            {% for grandchild_link in child_link.links %}  
+              <li><a href= "{{ grandchild_link.url }}">{{ grandchild_link.title }}</a></li>
+            {% endfor %}
+            </ul>
+          {% endif %}   
+          </li>
+          {% endfor %}
+        </ul> 
+      {% endif %} 
+      </li>
+      {% endfor %}
+      </ul>
+  </div>
+  
+    <div class="grid__item one-third"><h4><strong><!--Your menu name as header--></strong></h4>
+  	<ul class="parent">
+      {% for link in linklists.<!--Your menu name-->.links %}
+      <li><a href="{{ link.url }}">{{ link.title }}</a>
+      {% if link.links != blank %}
+        <ul class="child">
+          {% for child_link in link.links %}  
+          <li><a href= "{{ child_link.url }}">{{ child_link.title }}</a>
+          {% if child_link.links != blank %}
+            <ul class="grandchild">
+            {% for grandchild_link in child_link.links %}  
+              <li><a href= "{{ grandchild_link.url }}">{{ grandchild_link.title }}</a></li>
+            {% endfor %}
+            </ul>
+          {% endif %}   
+          </li>
+          {% endfor %}
+        </ul> 
+      {% endif %} 
+      </li>
+      {% endfor %}
+      </ul>
+  </div>
+
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "sitemap",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
